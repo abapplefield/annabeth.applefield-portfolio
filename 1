@@ -1,0 +1,204 @@
+import React from "react";
+
+// One-page portfolio mockup for Annabeth Applefield
+// TailwindCSS assumed available in the environment
+
+export default function Portfolio() {
+  // OPTIONAL: drop in a hosted headshot URL when you have one
+  const HEADSHOT: string | null = "sandbox:/mnt/data/90E8C3E2-3547-47A2-9B30-E848A03DA07E 2.JPEG";
+
+  const Card = ({ title, children }: { title: string; children: React.ReactNode }) => (
+    <div className="rounded-2xl shadow-lg p-6 bg-white/90 backdrop-blur border border-slate-200 hover:shadow-xl transition-shadow">
+      <h3 className="text-xl font-semibold mb-3 text-slate-900">{title}</h3>
+      <div className="text-slate-700 leading-relaxed space-y-3">{children}</div>
+    </div>
+  );
+
+  const Tag = ({ children }: { children: React.ReactNode }) => (
+    <span className="inline-flex items-center rounded-full border border-slate-200 px-3 py-1 text-xs font-medium text-slate-700 bg-white/60">
+      {children}
+    </span>
+  );
+
+  return (
+    <main className="min-h-screen bg-gradient-to-b from-rose-50 via-white to-indigo-50">
+      {/* Header */}
+      <header className="max-w-5xl mx-auto px-6 pt-12 pb-8">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="flex items-start gap-4">
+            {HEADSHOT ? (
+              <img
+                src={HEADSHOT}
+                alt="Annabeth Applefield headshot"
+                className="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover border border-white shadow-sm"
+              />
+            ) : (
+              <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-tr from-indigo-200 to-rose-200 grid place-items-center text-slate-700 font-semibold border border-white shadow-sm">
+                AA
+              </div>
+            )}
+            <div>
+              <h1 className="text-3xl md:text-4xl font-bold tracking-tight text-slate-900">Annabeth Applefield</h1>
+              <p className="mt-2 text-slate-600 max-w-2xl">
+                Marketing & Content Strategist — SEO, Social, and data‑informed storytelling. MBA (Sports Business) candidate, Samford University — Dec 2025.
+              </p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <Tag>SEO Content</Tag>
+                <Tag>Paid Social</Tag>
+                <Tag>UGC / Creators</Tag>
+                <Tag>Analytics (GA4)</Tag>
+                <Tag>Brand Strategy</Tag>
+              </div>
+            </div>
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              className="rounded-full px-4 py-2 text-sm font-medium bg-slate-900 text-white hover:bg-slate-800"
+              href="mailto:awapplefield@gmail.com"
+            >
+              awapplefield@gmail.com
+            </a>
+            <a
+              className="rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800 hover:bg-slate-100"
+              href="https://www.linkedin.com/in/annabeth-applefield/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+            <a
+              className="rounded-full px-4 py-2 text-sm font-medium border border-slate-300 text-slate-800 hover:bg-slate-100"
+              href="sandbox:/mnt/data/Annabeth_Applefield_Portfolio.pdf"
+            >
+              Download PDF
+            </a>
+          </div>
+        </div>
+      </header>
+
+      {/* Content */}
+      <section className="max-w-5xl mx-auto px-6 pb-20 space-y-8">
+        {/* Featured Social Campaigns */}
+        <div className=\"grid md:grid-cols-2 gap-6\">
+          <Card title=\"Featured Social Campaign — TikTok #1 (Sleepyhead USA)\">
+            <p>
+              Produced a viral TikTok that leveraged humor + lifestyle storytelling to reach the college market.
+            </p>
+            <ul className=\"list-disc pl-5 space-y-1\">
+              <li>Concept → script → film → edit → publish → community replies.</li>
+              <li>Outcomes: <span className=\"font-medium\">1.2M+ views, 175K+ likes, 1,200+ comments</span>; blueprint for future TikTok content.</li>
+              <li>Role: end‑to‑end creator, voice alignment, and comment engagement.</li>
+            </ul>
+            <a
+              className=\"inline-flex items-center mt-2 text-sm font-medium text-indigo-700 hover:text-indigo-800\"
+              href=\"https://www.tiktok.com/@sleepyheadusa/video/7178592947477204266\"
+              target=\"_blank\"
+              rel=\"noreferrer\"
+            >
+              View TikTok ↗
+            </a>
+          </Card>
+
+          <Card title=\"Featured Social Campaign — TikTok #2 (Sleepyhead USA)\">
+            <p>
+              Additional high-performing TikTok created for the same audience; focused on trend-aligned storytelling and product relevance.
+            </p>
+            <ul className=\"list-disc pl-5 space-y-1\">
+              <li>Roles: ideation, filming, editing, posting, and moderation.</li>
+              <li>Outcome: strong engagement and saves; reinforced creative direction for subsequent content.</li>
+              <li>Use case: reference for UGC briefs and hook testing.</li>
+            </ul>
+            <a
+              className=\"inline-flex items-center mt-2 text-sm font-medium text-indigo-700 hover:text-indigo-800\"
+              href=\"https://www.tiktok.com/@sleepyheadusa/video/7042382414190087429\"
+              target=\"_blank\"
+              rel=\"noreferrer\"
+            >
+              View TikTok ↗
+            </a>
+          </Card>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card title="SEO Blog Copywriting — Sleepyhead USA">
+            <p>
+              <span className="font-medium">Project:</span> Blog content for the college market
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Wrote engaging, SEO‑optimized articles for students and parents.</li>
+              <li>Keyword research, internal/external linking to improve organic visibility & leads.</li>
+              <li>Strengthened topical authority in the higher‑ed lifestyle niche.</li>
+            </ul>
+            <a
+              className="inline-flex items-center mt-2 text-sm font-medium text-indigo-700 hover:text-indigo-800"
+              href="https://sleepyheadusa.com/blogs/journal/college-dorm-bed-essentials"
+              target="_blank"
+              rel="noreferrer"
+            >
+              View sample post ↗
+            </a>
+          </Card>
+
+          <Card title="Digital Strategy & Web — Gulf Air Center">
+            <p>
+              <span className="font-medium">Project:</span> Full web & digital marketing strategy
+            </p>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Established and optimized web development & brand promotion strategies.</li>
+              <li>Aligned to company targets, market data, and budget factors to grow visibility.</li>
+              <li>Delivered cohesive branding in a competitive aviation market.</li>
+            </ul>
+            <a
+              className="inline-flex items-center mt-2 text-sm font-medium text-indigo-700 hover:text-indigo-800"
+              href="https://gulfaircenter.com/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Visit site ↗
+            </a>
+          </Card>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-6">
+          <Card title="Consulting Case Study — INDYCAR Urban Expansion (MBA)">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Authored a 25+ page proposal recommending Monterrey, Mexico for expansion.</li>
+              <li>Market research, infrastructure analysis, financial modeling, sponsorship strategy.</li>
+              <li>Ranked #2 in class; commended by executives.</li>
+            </ul>
+          </Card>
+
+          <Card title="Brand & Strategic Analysis — Red Bull (MBA)">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>25‑page case study on business model, positioning, and consumer psychology.</li>
+              <li>Included SFAS, SWOT, and branding/sponsorship recommendations.</li>
+              <li>Focus: loyalty, cultural influence, global growth strategy.</li>
+            </ul>
+          </Card>
+        </div>
+
+        <Card title="Skills & Tools">
+          <div className="grid md:grid-cols-2 gap-4">
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Paid Social: Meta, TikTok, LinkedIn; UGC & creator briefing</li>
+              <li>SEO: keyword research, on‑page, internal linking, content refresh</li>
+              <li>Analytics: GA4, social insights; testing roadmaps</li>
+              <li>Copy & Storytelling: brand voice, conversion‑focused messaging</li>
+            </ul>
+            <ul className="list-disc pl-5 space-y-1">
+              <li>Project Management: calendars, briefs, cross‑functional collaboration</li>
+              <li>Outcome Highlights: +65% social engagement; +50% website traffic</li>
+              <li>MBA (Sports Business), Samford University — Dec 2025</li>
+              <li>Based in Birmingham, AL</li>
+            </ul>
+          </div>
+        </Card>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-10 text-center text-sm text-slate-500">
+        © {new Date().getFullYear()} Annabeth Applefield — Portfolio Mockup
+      </footer>
+    </main>
+  );
+}
